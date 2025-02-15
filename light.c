@@ -13,14 +13,14 @@ int shadow_test(LIGHT_T light, VP_T int_pt, OBJ_T *list, VP_T normal) {
     shadow_ray.origin = int_pt;
     shadow_ray.dir = vp_subtract(light.loc, int_pt);
     shadow_ray.dir = normalize(shadow_ray.dir);
-    //Offset
+    //Offset From Surface
     shadow_ray.origin.x += normal.x * 0.001;
     shadow_ray.origin.y += normal.y * 0.001;
     shadow_ray.origin.z += normal.z * 0.001;
-    //Intersect check
+    //Dummy Variables for Intersect
     double dummy_t;
     VP_T dummy_int_pt, dummy_normal;
-
+    //Intersect check
     OBJ_T *curr;
     for (curr = list; curr != NULL; curr = curr->next) {
         if (curr->intersect(shadow_ray, curr, &dummy_t, &dummy_int_pt, &dummy_normal) == 1) {

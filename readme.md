@@ -11,7 +11,7 @@ Also check out my [C++ Ray Tracer](https://github.com/skbennett/CPP-Ray-Tracer) 
 
 ```bash
 git clone https://github.com/skbennett/C-Ray-Tracer.git
-cd c-ray-tracer
+cd C-Ray-Tracer
 gcc *.c -o rt
 ./rt
 ```
